@@ -1,20 +1,32 @@
-// classes
+import { Invoice } from './classes/Invoice.js'
+import { Payment } from './classes/payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
 
-class Invoice {
-    client: string;
-    details: string;
-    amount: number;
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
 
-    constructor(c: string, d: string, a: number) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-
-    format() {
-        return `${this.client} owes \$${this.amount} for ${this.details}`;
-    }
+interface IsPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(a: number): number;
 }
+
+const me: IsPerson = {
+    name: "Matt",
+    age: 38,
+    speak(text: string): void {
+        console.log(text);
+    },
+    spend(amount: number): number {
+        console.log(`I spent ${amount}`);
+        return amount;
+    },
+}
+
+
+
+// access modifiers are only: readonly, private, and public (default)
 
 let invoices: Invoice[] = [];
 
