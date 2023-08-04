@@ -60,6 +60,7 @@ body{
     border: 0;
     background: #ff0aa7;
     padding: 6px;
+    margin-top: 1rem;
     min-width: 80px;
     border-radius: 4px;
   }
